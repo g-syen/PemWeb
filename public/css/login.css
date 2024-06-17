@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  background-color: #d5e3f0;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  width: 1400px; /* Set a fixed width for the container */
+  height: 650px; /* Ensure the height adjusts to the content */
+}
+
+.login-box,
+.register-box {
+  padding: 80px;
+  width: 50%; /* Ensure both boxes take up equal space */
+}
+
+.login-box {
+  background-color: #d5e3f0;
+}
+
+.login-box h2 {
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #2d3e50;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.textbox {
+  margin-bottom: 40px;
+}
+
+.textbox label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #2b456b;
+  font-family: "Lato", sans-serif;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.textboxPassword {
+  margin-bottom: 10px;
+}
+
+.textboxPassword input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+.textboxPassword label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #2b456b;
+  font-family: "Lato", sans-serif;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  color: #2b456b;
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2b456b;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn:hover {
+  background-color: #3b4f63;
+}
+
+.register-box {
+  background-color: #d5e3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.register-content {
+  text-align: center;
+  background-color: #ffffffc8;
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.register-content h2 {
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #2b456b;
+  font-family: "Montserrat", sans-serif;
+}
+
+.register-content p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #6c7a89;
+}
+
+.register-btn {
+  padding: 20px 100px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2b456b;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.register-btn:hover {
+  background-color: #3b4f63;
+}
+
+.register-content img {
+  height: 70px;
+}

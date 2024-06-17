@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  background-color: #d5e3f0;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  width: 1400px; /* Set a fixed width for the container */
+  height: 650px; /* Ensure the height adjusts to the content */
+}
+
+.login-section {
+  padding: 80px;
+  width: 50%; /* Ensure both sections take up equal space */
+  position: relative;
+}
+
+.login-section {
+  background-color: #d5e3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-content {
+  text-align: center;
+  background-color: #ffffffc8;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.login-content h2 {
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #2b456b;
+  font-family: "Montserrat", sans-serif;
+}
+
+.login-content p {
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #6c7a89;
+}
+
+.login-section .btn {
+  padding: 20px 100px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2b456b;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.login-section .btn:hover {
+  background-color: #3b4f63;
+}
+
+.register-section {
+  padding-left: 80px;
+  padding-top: 50px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  width: 50%; /* Ensure both sections take up equal space */
+  position: relative;
+  background-color: #d5e3f0;
+}
+
+.register-section h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #2b456b;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.textbox {
+  margin-bottom: 40px;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.textbox label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #2b456b;
+  font-family: "Lato", sans-serif;
+}
+
+.register-section .btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #2b456b;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.register-section .btn:hover {
+  background-color: #3b4f63;
+}
+
+.login-content img {
+  height: 70px;
+}

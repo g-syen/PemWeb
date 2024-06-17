@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #fff9da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  background-color: #d1dea9;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #7a9c57;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header .logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.header .user-icon img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "list ads ads"
+    "list details calendar"
+    "list expense calendar";
+  grid-template-columns: 1.5fr 1.25fr 1.25fr;
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  height: 750px;
+}
+
+.grocery-list {
+  position: relative;
+  grid-area: list;
+  background-color: #d1dea9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  max-height: 1000px; /* Set the desired fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+.grocery-list h2 {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #7a9c57;
+}
+
+.grocery-list ul {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.grocery-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.grocery-list li input[type="text"] {
+  flex-grow: 1;
+  margin-right: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  border: none; /* Remove all borders */
+  border-bottom: 2px solid #7a9c57; /* Add bottom border */
+  background-color: transparent; /* Make background transparent */
+  color: #7a9c57; /* Ensure text is visible */
+  font-family: "Lato", sans-serif;
+}
+
+.grocery-list li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #7a9c57;
+  border-radius: 4px;
+  outline: none;
+  position: relative;
+}
+
+.grocery-list li input[type="checkbox"]::after {
+  content: "\2714"; /* Unicode check mark symbol */
+  font-size: 12px; /* Adjust size of check mark */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: transparent; /* Initially transparent */
+}
+
+.grocery-list li input[type="checkbox"]:checked::after {
+  color: #fff; /* Color of check mark when checked */
+  background-color: #7a9c57;
+  padding-left: 2px;
+  padding-right: 2px;
+  border-radius: 4px;
+}
+
+.grocery-list .edit-btn,
+.grocery-list .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 16px; /* Match the width of the checkbox */
+  height: 16px; /* Match the height of the checkbox */
+  transform: scale(1.25); /* Slightly scale the buttons */
+  margin-left: 25px;
+}
+
+.grocery-list .edit-btn img {
+  height: 20px;
+  margin-right: 20px;
+}
+
+.grocery-list .delete-btn img {
+  height: 20px;
+  margin-right: 20px;
+}
+
+.actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+}
+
+.grocery-footer {
+  bottom: 180px;
+  left: 725px;
+  position: fixed;
+  display: flex;
+}
+
+.grocery-list .add-btn,
+.grocery-list .clear-btn {
+  background-color: transparent;
+  padding: 20px;
+  color: #7a9c57;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.grocery-list li input[type="checkbox"]:checked + input[type="text"] {
+  text-decoration: line-through; /* Cross out text when checkbox is checked */
+}
+
+.ads {
+  grid-area: ads;
+  background-color: #d1dea9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ads h2 {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.item-details {
+  grid-area: details;
+  position: relative;
+  background-color: #fff2b0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-details h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #7a9c57;
+}
+
+.item-details .form-group {
+  margin-bottom: 20px;
+  color: #7a9c57;
+}
+
+.item-details input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: #7a9c57 2px solid;
+  border-radius: 10px;
+  background-color: transparent; /* Make background transparent */
+  font-family: "Lato", sans-serif;
+  color: #7a9c57;
+}
+
+.item-details .total {
+  position: relative;
+}
+
+.item-details .total h2 {
+  font-size: 2em;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  color: #7a9c5788;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.item-details .total h4 {
+  font-size: 1em;
+  margin-top: 40px; /* Adjusted top margin */
+  margin-bottom: 15px;
+  text-align: right;
+  margin-right: 20px;
+  color: #7a9c57;
+}
+
+.item-details label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Lato", sans-serif;
+}
+
+.price-unit-container {
+  display: flex;
+  align-items: center;
+}
+
+.price-unit-container input[type="text"] {
+  padding: 10px;
+  border: #7a9c57 2px solid;
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: "Lato", sans-serif;
+  color: #7a9c57;
+  width: calc(57% - 10px); /* Adjust width to fit three elements in a row */
+  margin-right: 10px; /* Adjust spacing between elements */
+}
+
+.price-unit-container select {
+  background-color: #7a9c57;
+  border: none;
+  padding: 10px;
+  width: calc(20% - 10px); /* Adjust width to fit three elements in a row */
+  border-radius: 5px;
+  color: #fff2b0;
+  font-family: "Lato", sans-serif;
+}
+
+.price-unit-container input[type="text"]#quantity {
+  width: calc(20% - 10px); /* Adjust width to make quantity input tighter */
+}
+
+.item-details .form-group {
+  margin-bottom: 20px;
+  color: #7a9c57;
+}
+
+.save {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+}
+
+.save .done,
+.save .cancel {
+  background-color: transparent;
+  padding: 10px;
+  color: #7a9c57;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.monthly-expense {
+  grid-area: expense;
+  background-color: #fff2b0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.monthly-expense h2 {
+  margin-bottom: 30px;
+  font-family: "Lato", sans-serif;
+  color: #7a9c57;
+}
+
+.monthly-expense .expense {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  color: #7a9c57;
+  font-weight: bold;
+}
+
+.calendar {
+  grid-area: calendar;
+  background-color: #fff9da;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 75%;
+  align-self: end;
+  border: 2px solid #7a9c57; /* Add stroke around the calendar */
+}
+
+.calendar-header button {
+  background-color: transparent; /* Make the background transparent */
+  color: #7a9c57; /* Set button text color */
+  border: none; /* Add border */
+  padding: 20px 20px; /* Increase padding for larger buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em; /* Increase font size */
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #7a9c57;
+}
+
+.calendar-header .month-year {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.calendar h2 {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.calendar-header img {
+  height: 35px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.days div {
+  background-color: #fff9da;
+  width: 50px; /* Increase width */
+  height: 50px; /* Set height to match width for perfect circle */
+  border-radius: 50%; /* Make the days circular */
+  cursor: pointer; /* Make the days clickable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+.days div:hover {
+  background-color: #ffeb88a9; /* Color on hover */
+}
+
+.days div:active,
+.days div.clicked {
+  background-color: #ffec88; /* Color when clicked */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: right;
+  align-items: start;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s;
+}
+
+.overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.user-menu {
+  width: 250px;
+  border-radius: 50px 0px 10px 10px;
+  background-color: #fff9da;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 60px;
+  margin-right: 40px;
+}
+
+.user-menu-header {
+  background-color: #7a9c57;
+  padding: 20px;
+  border-radius: 50px 0px 0px 0px;
+  height: 90px;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+.overlay .user-icon img {
+  width: 100px;
+  height: 100px;
+  margin-left: 55px;
+  margin-top: 20px;
+}
+
+.user-menu-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-menu-body img {
+  height: 25px;
+}
+
+.menu-item-top {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item-top button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #7a9c57;
+}
+
+.menu-item-bottom {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item-bottom button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: #7a9c57;
+}
+
+.theme-menu {
+  width: 250px;
+  border-radius: 40px;
+  background-color: #fff9da;
+  overflow: hidden;
+  margin-top: 200px;
+  margin-right: 300px;
+
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+}
+.theme-menu h2 {
+  font-size: 20px;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #7a9c57;
+}
+
+.theme-menu .theme-option-top {
+  text-align: center;
+  background-color: transparent;
+  display: block;
+  color: #9c5757;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.theme-menu img {
+  height: 20px;
+}
+
+.theme-menu .theme-option-bottom {
+  text-align: center;
+  background-color: transparent;
+  display: block;
+  color: #57779c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 20px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.theme-menu .theme-option-cancel {
+  text-align: center;
+  background-color: transparent;
+  display: block;
+  color: #7a9c57;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.receipt {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  margin-right: 650px;
+  margin-top: 160px;
+}
+
+.receipt .close {
+  display: flex;
+  justify-self: start;
+  height: 30px;
+  cursor: pointer;
+}
+
+.receipt .receiptLogo {
+  display: flex;
+  margin-left: 90px;
+  height: 70px;
+}
+
+.receipt h1 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+.receipt p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.date {
+  margin: 10px 0;
+}
+
+hr {
+  border: 1px dashed #000;
+  margin: 10px 0;
+}
+
+table.items {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.items th,
+table.items td {
+  padding: 5px;
+  text-align: left;
+}
+
+table.items th {
+  font-weight: bold;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.design-credit {
+  font-size: 0.8em;
+  color: #999;
+  font-family: "Montserrat", sans-serif;
+}
+
+tab {
+  display: inline-block;
+  margin-left: 48px;
+}
+
+.disabled {
+  opacity: 0.5; /* Lower opacity for disabled state */
+  pointer-events: none; /* Disable pointer events */
+}
