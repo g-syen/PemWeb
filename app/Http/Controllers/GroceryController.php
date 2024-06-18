@@ -20,7 +20,11 @@ class GroceryController extends Controller
         $connection = DB::connection()->getDatabaseName();
         $items = GroceryItem::all();
         $data = $request->session()->all();
-        $theme = $data['theme'];
+        if(array_key_exists( "theme", $data )){
+            $theme = $data['theme'];
+        }else {
+            $theme = '';
+        }
         if($theme=="pinkMode"){
             return view('pinkMode', compact('items'));
         } elseif($theme=="blueMode"){
